@@ -27,6 +27,17 @@ features_train, features_test, labels_train, labels_test = preprocess()
 #########################################################
 ### your code goes here ###
 
+### Create the gaussian naive bayes classifier and train it.
+from sklearn.naive_bayes import GaussianNB
+clf = GaussianNB()
+clf.fit(features_train, labels_train)
+
+### predict the labels for the feature test set
+labels_pred = clf.predict(features_test)
+
+### print the accuracy of the predicted labels.
+from sklearn.metrics import accuracy_score
+print "Accuracy: " + str(accuracy_score(labels_test, labels_pred))
 
 #########################################################
 
