@@ -25,6 +25,10 @@ features_train, features_test, labels_train, labels_test = preprocess()
 #########################################################
 ### your code goes here ###
 
+### reduce the size of the training set
+features_train = features_train[:len(features_train)/100] 
+labels_train = labels_train[:len(labels_train)/100] 
+
 ### create the SVC classifier and train it.
 from sklearn import svm
 clf = svm.SVC(kernel='rbf', C=10000.0)
@@ -40,6 +44,16 @@ print "prediction time: ", round(time() - timestampBeforePrediction,3), "s"
 ### print the accuracy of the predicted labels.
 from sklearn.metrics import accuracy_score
 print "Accuracy: " + str(accuracy_score(labels_test, labels_pred))
+
+### print result for element 10
+print "Label of element 10: ", labels_pred[10]
+
+### print result for element 26
+print "Label of element 26: ", labels_pred[26]
+
+### print result for element 50
+print "Label of element 50: ", labels_pred[50]
+
 #########################################################
 
 
