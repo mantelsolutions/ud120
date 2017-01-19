@@ -31,7 +31,7 @@ labels_train = labels_train[:len(labels_train)/100]
 
 ### create the SVC classifier and train it.
 from sklearn import svm
-clf = svm.SVC(kernel='linear')
+clf = svm.SVC(kernel='rbf', C=10000.0)
 timestampBeforeFitting = time()
 clf.fit(features_train, labels_train)
 print "trainig time: ", round(time()-timestampBeforeFitting,3), "s"
