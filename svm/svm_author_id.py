@@ -25,10 +25,6 @@ features_train, features_test, labels_train, labels_test = preprocess()
 #########################################################
 ### your code goes here ###
 
-### reduce the size of the training set
-features_train = features_train[:len(features_train)/100] 
-labels_train = labels_train[:len(labels_train)/100] 
-
 ### create the SVC classifier and train it.
 from sklearn import svm
 clf = svm.SVC(kernel='rbf', C=10000.0)
